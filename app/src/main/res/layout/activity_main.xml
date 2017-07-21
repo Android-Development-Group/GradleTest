@@ -8,8 +8,16 @@
 
     <ImageView
         android:id="@+id/iv_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"/>
+
+
+    <ImageView
+        android:id="@+id/iv_image1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/iv_image"
         android:layout_centerInParent="true"/>
 
 

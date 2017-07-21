@@ -116,8 +116,8 @@ android {
 android.applicationVariants.all { variant ->
     switch (variant.flavorName) {
         case "app1Admin":
-            variant.buildConfigField "String", "DOMAIN_NAME",
-                    "\"https://admin.app1domain.com/\""
+            variant.buildConfigField "String", "DOMAIN_NAME", "\"http://pic.qiantucdn.com/\""
+            variant.buildConfigField "String", "DOMAIN_NAME1", "\"http://pic1.16pic.com/\""
             if ("debug" == variant.buildType.getName()) {
                 variant.mergedFlavor.setVersionName(getTestVersionName() + "-admin")
             } else {
@@ -125,20 +125,19 @@ android.applicationVariants.all { variant ->
             }
             break
         case "app1Offline":
-            variant.buildConfigField "String", "DOMAIN_NAME",
-                    "\"https://offline.app1domain.com/\""
+            variant.buildConfigField "String", "DOMAIN_NAME", "\"http://pic.qiantucdn.com/\""
+            variant.buildConfigField "String", "DOMAIN_NAME1", "\"http://pic1.16pic.com/\""
             variant.mergedFlavor.setVersionName(getTestVersionName())
             break
         case "app1Online":
-            variant.buildConfigField "String", "DOMAIN_NAME",
-                    "\"https://online.app1domain.com/\""
+            variant.buildConfigField "String", "DOMAIN_NAME", "\"http://pic.qiantucdn.com/\""
+            variant.buildConfigField "String", "DOMAIN_NAME1", "\"http://pic1.16pic.com/\""
             if ("debug" == variant.buildType.getName()) {
                 variant.mergedFlavor.setVersionName(getTestVersionName())
             }
             break
         case "app2Admin":
-            variant.buildConfigField "String", "DOMAIN_NAME",
-                    "\"https://admin.app2domain.com/\""
+            variant.buildConfigField "String", "DOMAIN_NAME", "\"https://admin.app2domain.com/\""
             if ("debug" == variant.buildType.getName()) {
                 variant.mergedFlavor.setVersionName(getApp2TestVersionName() + "-admin")
             } else {
@@ -146,13 +145,11 @@ android.applicationVariants.all { variant ->
             }
             break
         case "app2Offline":
-            variant.buildConfigField "String", "DOMAIN_NAME",
-                    "\"https://offline.app2domain.com/\""
+            variant.buildConfigField "String", "DOMAIN_NAME", "\"https://offline.app2domain.com/\""
             variant.mergedFlavor.setVersionName(getApp2TestVersionName())
             break
         case "app2Online":
-            variant.buildConfigField "String", "DOMAIN_NAME",
-                    "\"https://online.app2domain.com/\""
+            variant.buildConfigField "String", "DOMAIN_NAME", "\"https://online.app2domain.com/\""
             if ("debug" == variant.buildType.getName()) {
                 variant.mergedFlavor.setVersionName(getApp2TestVersionName())
             }
