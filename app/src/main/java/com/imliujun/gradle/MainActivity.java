@@ -18,9 +18,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         TextView tv_version = (TextView) findViewById(R.id.tv_version);
+        TextView tv_version_code = (TextView) findViewById(R.id.tv_version_code);
 
 
         String versionName = AppUtils.getVersionName(this);
+        int versionCode = AppUtils.getVersionCode(this);
+
         tv_version.setText(versionName);
+        tv_version_code.setText(String.valueOf(versionCode));
     }
 }

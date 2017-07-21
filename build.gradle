@@ -24,7 +24,7 @@ task clean(type: Delete) {
 
 ext {
     APP1_VERSION_NAME = "2.0.2"
-    APP1_TEST_NUM = "0001"
+    APP1_TEST_NUM = "0002"
     APP2_VERSION_NAME = "1.0.5"
     APP2_TEST_NUM = "0005"
 }

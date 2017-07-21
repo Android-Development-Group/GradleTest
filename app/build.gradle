@@ -9,22 +9,22 @@ android {
         versionCode gitVersionCode()
     }
 
-    //    配置你自己的签名文件信息，然后放开注释
-    //    signingConfigs {
-    //        app1 {
-    //            storeFile file("app1.jks")
-    //            storePassword "111111"
-    //            keyAlias "app1"
-    //            keyPassword "111111"
-    //        }
-    //
-    //        app2 {
-    //            storeFile file("app2.jks")
-    //            storePassword "111111"
-    //            keyAlias "app2"
-    //            keyPassword "111111"
-    //        }
-    //    }
+    //配置你自己的签名文件信息，然后放开注释
+    signingConfigs {
+        app1 {
+            storeFile file("../app1.jks")
+            storePassword "app155"
+            keyAlias "app1"
+            keyPassword "app155"
+        }
+
+        app2 {
+            storeFile file("../app2.jks")
+            storePassword "app255"
+            keyAlias "app2"
+            keyPassword "app255"
+        }
+    }
 
     buildTypes {
         release {
@@ -37,7 +37,7 @@ android {
             buildConfigField "boolean", "LOG_DEBUG", "true"
             versionNameSuffix "-debug"
             //    配置你自己的签名文件信息，然后放开注释
-            //            signingConfig null
+            signingConfig null
             manifestPlaceholders.UMENG_CHANNEL_VALUE = "test"
         }
     }
@@ -50,7 +50,6 @@ android {
         app1 {
             dimension "APP"
             applicationId 'com.imliujun.app1'
-
             versionName rootProject.ext.APP1_VERSION_NAME
 
             //应用名
@@ -69,13 +68,13 @@ android {
                                     AMAP_KEY           : "app1的高德地图key",
                                     APPLICATIONID      : applicationId]
             //签名文件     配置你自己的签名文件信息，然后放开注释
-            //            signingConfig signingConfigs.app1
+            signingConfig signingConfigs.app1
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
         app2 {
             dimension "APP"
             applicationId 'com.imliujun.app2'
-
             versionName rootProject.ext.APP2_VERSION_NAME
 
             //应用名
@@ -94,7 +93,8 @@ android {
                                     AMAP_KEY           : "app2的高德地图key",
                                     APPLICATIONID      : applicationId]
             //签名文件     配置你自己的签名文件信息，然后放开注释
-            //            signingConfig signingConfigs.app2
+            signingConfig signingConfigs.app2
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
         offline {
@@ -119,9 +119,9 @@ android.applicationVariants.all { variant ->
             variant.buildConfigField "String", "DOMAIN_NAME",
                     "\"https://admin.app1domain.com/\""
             if ("debug" == variant.buildType.getName()) {
-                variant.mergedFlavor.setVersionName(getTestVersionName() + "-管理员")
+                variant.mergedFlavor.setVersionName(getTestVersionName() + "-admin")
             } else {
-                variant.mergedFlavor.setVersionName(rootProject.ext.APP1_VERSION_NAME + "-管理员")
+                variant.mergedFlavor.setVersionName(rootProject.ext.APP1_VERSION_NAME + "-admin")
             }
             break
         case "app1Offline":
@@ -140,9 +140,9 @@ android.applicationVariants.all { variant ->
             variant.buildConfigField "String", "DOMAIN_NAME",
                     "\"https://admin.app2domain.com/\""
             if ("debug" == variant.buildType.getName()) {
-                variant.mergedFlavor.setVersionName(getApp2TestVersionName() + "-管理员")
+                variant.mergedFlavor.setVersionName(getApp2TestVersionName() + "-admin")
             } else {
-                variant.mergedFlavor.setVersionName(rootProject.ext.APP2_VERSION_NAME + "-管理员")
+                variant.mergedFlavor.setVersionName(rootProject.ext.APP2_VERSION_NAME + "-admin")
             }
             break
         case "app2Offline":
