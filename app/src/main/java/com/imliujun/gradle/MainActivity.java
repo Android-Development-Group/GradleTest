@@ -3,8 +3,10 @@ package com.imliujun.gradle;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.imliujun.gradle.utils.AppUtils;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView tv_version = (TextView) findViewById(R.id.tv_version);
         TextView tv_version_code = (TextView) findViewById(R.id.tv_version_code);
+        ImageView iv_image = (ImageView) findViewById(R.id.iv_image);
 
 
         String versionName = AppUtils.getVersionName(this);
@@ -26,5 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         tv_version.setText(versionName);
         tv_version_code.setText(String.valueOf(versionCode));
+        Glide.with(this)
+                .load("http://pic.qiantucdn.com/58pic/17/89/50/55a65ec4979a9_1024.jpg")
+                .into(iv_image);
     }
 }

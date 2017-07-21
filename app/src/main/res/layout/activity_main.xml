@@ -6,11 +6,11 @@
                 android:layout_height="match_parent"
                 tools:context="com.imliujun.gradle.MainActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/iv_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Hello World!"/>
+        android:layout_centerInParent="true"/>
 
 
     <TextView
