@@ -11,13 +11,18 @@ android {
 
     //配置你自己的签名文件信息，然后放开注释
     signingConfigs {
+//        app1 {
+//            storeFile file("../app1.jks")
+//            storePassword System.console().readLine("\nKeyStore password: ")
+//            keyAlias "app1"
+//            keyPassword System.console().readLine("\nKey password: ")
+//        }
         app1 {
             storeFile file("../app1.jks")
             storePassword "app155"
             keyAlias "app1"
             keyPassword "app155"
         }
-
         app2 {
             storeFile file("../app2.jks")
             storePassword "app255"
